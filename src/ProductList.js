@@ -17,7 +17,6 @@ import {
   Popover,
   Badge,
   CircularProgress,
-  Alert,
   Pagination,
   Stack,
 } from "@mui/material";
@@ -50,10 +49,8 @@ const ProductList = () => {
   );
   const [anchorEl, setAnchorEl] = useState(null);
   const [page, setPage] = useState(Number(localStorage.getItem("page")) || 0);
-  // const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Handle pagination change
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
   };
@@ -80,7 +77,6 @@ const ProductList = () => {
     }
   }, [setCart]);
 
-  // Get unique categories
   const categories = useMemo(() => {
     const uniqueCategories = new Set(
       products.map((product) => product.main_category)

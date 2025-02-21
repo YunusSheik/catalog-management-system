@@ -44,7 +44,7 @@ const ProductDetails = () => {
       <p>GTIN: {product.gtin ? product.gtin : "N/A"}</p>
       <p>
         Selling Unit:{" "}
-        {product.sellingUnit == "nos" ? "0 nos" : product.sellingUnit}
+        {product.sellingUnit === "nos" ? "0 nos" : product.sellingUnit}
       </p>
       <p>MRP: ₹{product.mrp?.mrp || "N/A"}</p>
       <p>
