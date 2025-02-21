@@ -48,8 +48,8 @@ const ProductList = () => {
     localStorage.getItem("searchTerm") || ""
   );
   const [anchorEl, setAnchorEl] = useState(null);
-  const [page, setPage] = useState(Number(localStorage.getItem("page")) || 0);
-  const [error, setError] = useState(null);
+  const [page] = useState(Number(localStorage.getItem("page")) || 0);
+  const [setError] = useState(null);
 
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
@@ -106,7 +106,6 @@ const ProductList = () => {
     );
   }, [filteredProducts, sortOrder]);
 
-  // Cart popover handling
   const handleCartClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -117,7 +116,6 @@ const ProductList = () => {
 
   const open = Boolean(anchorEl);
 
-  // Define columns for the DataGrid
   const columns = [
     {
       field: "image",
@@ -139,7 +137,7 @@ const ProductList = () => {
           variant="contained"
           color="primary"
           onClick={(event) => {
-            event.stopPropagation(); // Prevent row click from triggering
+            event.stopPropagation();
             addToCart(params.row);
           }}
         >
@@ -149,7 +147,6 @@ const ProductList = () => {
     },
   ];
 
-  // Create rows from sorted product data
   const rows = sortedProducts.map((product, index) => ({
     id: product.id || product.sku_code || index,
     image: product.imageUrl,
@@ -161,9 +158,6 @@ const ProductList = () => {
   const handleRowClick = (params) => {
     navigate(`/product/${params.id}`);
   };
-
-  // if (loading) return <CircularProgress />;
-  // if (error) return <Alert severity="error">{error}</Alert>;
 
   return (
     <div>
@@ -220,15 +214,6 @@ const ProductList = () => {
         />
         <SortFilter sortOrder={sortOrder} setSortOrder={setSortOrder} />
       </Suspense>
-      {/* <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={10}
-        getRowId={(row) => row.id}
-        labelRowsPerPage=""
-        onRowClick={handleRowClick}
-        rowsPerPageOptions={[]}
-      /> */}
 
       {loading ? (
         <Stack

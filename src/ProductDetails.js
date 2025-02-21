@@ -22,11 +22,6 @@ const ProductDetails = () => {
 
   return (
     <div className="product-details">
-      {/* <img
-        src={product.imageUrl}
-        alt={product.name}
-        className="product-image-large"
-      /> */}
       <div className="product-header">
         <Avatar
           src={product.imageUrl}

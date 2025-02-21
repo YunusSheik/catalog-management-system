@@ -19,8 +19,8 @@ export const ProductProvider = ({ children }) => {
         const response = await axios.get(
           `https://catalog-management-system-dev-ak3ogf6zea-uc.a.run.app/cms/products?page=${currentPage}`
         );
-        setProducts(response.data.products); // Update products
-        setTotalPages(response.data.totalPages || 1); // Set total pages
+        setProducts(response.data.products);
+        setTotalPages(response.data.totalPages || 1);
       } catch (error) {
         console.error("Error fetching the data:", error);
       }
