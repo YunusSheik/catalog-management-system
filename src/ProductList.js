@@ -68,7 +68,15 @@ const ProductList = () => {
       setError("Failed to save data. Try again later.");
       setLoading(false);
     }
-  }, [selectedCategory, sortOrder, searchTerm, page, cart]);
+  }, [
+    selectedCategory,
+    setLoading,
+    setError,
+    sortOrder,
+    searchTerm,
+    page,
+    cart,
+  ]);
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart"));
