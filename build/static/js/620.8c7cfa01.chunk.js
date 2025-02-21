@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkcatalog_management_system=self.webpackChunkcatalog_management_system||[]).push([[620],{8620:(e,a,t)=>{t.r(a),t.d(a,{default:()=>n});t(5043);var r=t(5795),s=t(579);const n=e=>{let{searchTerm:a,setSearchTerm:t}=e;return(0,s.jsx)(r.A,{label:"Search Products",variant:"outlined",sx:{width:"1250px"},margin:"normal",value:a,onChange:e=>t(e.target.value)})}}}]);
-//# sourceMappingURL=620.8c7cfa01.chunk.js.map
